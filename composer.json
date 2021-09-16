@@ -1,0 +1,31 @@
+{
+    "name": "hkaghazi/gateway",
+    "description": "Easy connect to payment gateway",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hafez Kaghazi",
+            "email": "smart.hafez@live.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require-dev": {
+        "orchestra/testbench": "7.0.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hkaghazi\\Gateway\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Hkaghazi\\Gateway\\GateWayServiceProvider"
+            ],
+            "aliases": {
+                "Gateway": "Hkaghazi\\Gateway\\GateWayFacade"
+            }
+        }
+    }
+}

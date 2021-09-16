@@ -29,6 +29,28 @@ class Pay
     return $activeGatewaysMaped;
   }
 
+  public function payBy($gateway, $amount, $orderId)
+  {
+
+    switch ($gateway) {
+      case 'sadad':
+        $this->payBySadad($gateway, $amount, $orderId);
+        break;
+
+      case 'mellat':
+        $this->payByMellat($gateway, $amount, $orderId);
+        break;
+
+      case 'parsian':
+        $this->payByParsian($gateway, $amount, $orderId);
+        break;
+
+      default:
+        abort(404, 'invalid gateway');
+        break;
+    }
+  }
+
   public function payBySadad($gateway, $amount, $orderId)
   {
 

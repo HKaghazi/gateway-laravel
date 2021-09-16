@@ -9,8 +9,13 @@ class GateWayServiceProvider extends ServiceProvider
 
   public function register()
   {
-    // merge config file from user settings
 
+    // register Facade
+    $this->app->singleton('Gateway', function($app) {
+      return new Pay();
+    });
+
+    // merge config file from user settings
     $this->mergeConfigFrom(
       __DIR__ . '/../config/gateway.php',
       'gateway'
